@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Link Cloaking</title>
 </head>
 <body>
-    <div class="container">
-        <img src="https://th.bing.com/th/id/R.894e586bee1bc9962de83a47eba5414a?rik=wm9KlsjTCXNPiQ&riu=http%3a%2f%2fs3-us-west-2.amazonaws.com%2fsportshub2-uploads-prod%2ffiles%2fsites%2f1138%2f2018%2f01%2f11184759%2flogo_outline.png&ehk=bR2vYQ8Eg9fduHErHu2TnAVuF9hDVXl3YMJhsJuvdCA%3d&risl=&pid=ImgRaw" class="logo" alt="Logo">
-        <h1>Clicker Game</h1>
-        <div class="clicker-container">
-            <div id="counter" class="counter">0</div>
-            <button id="clickButton" class="click-button">Tap or hold keyboard</button>
-        </div>
-        <div class="upgrade-container">
-            <button id="upgradeButton" class="upgrade-button">Upgrade (Cost: 50)</button>
-            <button id="autoClickUpgradeButton" class="upgrade-button">Autoclick Upgrade (Cost: 500)</button>
-            <div id="upgradeCounter" class="upgrade-counter">Upgrades: 0</div>
-            <div id="clickMultiplier" class="click-multiplier">Click Multiplier: 1x</div>
-            <div id="autoClicks" class="click-multiplier">Autoclicks per Second: 1</div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <input type="text" id="urlInput" placeholder="Enter URL">
+    <button onclick="cloakURL()">Cloak URL</button>
+    <iframe id="cloakedFrame"></iframe>
+
+    <script>
+        function cloakURL() {
+            const url = document.getElementById("urlInput").value;
+            document.getElementById("cloakedFrame").src = url;
+        }
+    </script>
 </body>
 </html>
